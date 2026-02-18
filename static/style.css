@@ -1,3 +1,9 @@
+:root {
+    --accent: #ff0080;
+    --accent-lt: #ff0080;
+    --accent-dk: #ff0080;
+}
+
 body {
     background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
@@ -5,7 +11,8 @@ body {
 }
 
 h1 {
-    color: rgb(255, 0, 128);
+    background: white;
+    color: var(--accent);
     font-style: italic;
     font-family: Impact;
     text-align: center;
@@ -13,8 +20,30 @@ h1 {
 }
 
 p {
-    background: rgb(60, 0, 255);
+    background: rgb(116, 73, 255);
     font-weight: bold;
     padding: 10px;
     border: 2px double black;
+}
+
+ul, dl {
+    border: 2px solid var(--accent-dk);
+    display: inline-block;
+    padding: 20px;
+}
+
+dt {
+    background: white;
+    color: var(--accent);
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+footer {
+    background: var(--accent-dk);
+    color: white;
+    text-align: center;
+    font-size: 0.8rem;
 }

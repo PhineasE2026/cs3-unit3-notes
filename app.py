@@ -23,6 +23,12 @@ def index():
     # name_data is the variable declared here in python
     return render_template('index.html', name=name_data, year=year_data, favorites=favorites_list, ratings=ratings_dict)
 
+def about():
+    return render_template('about.html')
+
+def contact():
+    return render_template('contact.html')
+
 
 
 # TO RUN APP - type "flask run" into TERMINAL
