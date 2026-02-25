@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, request
 
 # Create an instance of Flask
 app = Flask(__name__)
@@ -19,9 +18,23 @@ def index():
         'Blueberry': 'No, this blueberry is a 0/10. I do not like it at all.'
     }
 
+
     # name is how we refer to it in the HTML template,
     # name_data is the variable declared here in python
     return render_template('index.html', name=name_data, year=year_data, favorites=favorites_list, ratings=ratings_dict)
+
+@app.route('/submit')
+def submit():
+        form_data = {
+            'name': request.form.get('name'),
+            'age': request.form.get('age'),
+            'hobby': request.form.get('hobby'),
+            'color': request.form.get('color'),
+            'lucly': request.form.get('lucky')
+        }
+
+        return render_template('results.html', form_data=form_data)
+
 
 def about():
     return render_template('about.html')
